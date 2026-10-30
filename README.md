@@ -2,6 +2,10 @@
 
 > 在 Windows 上，DeepSeek Harness（DSH）桌面应用的无头 shell 完全不可用，`pwsh` 与 `python` 均以退出码 `0xC0000135`（`STATUS_DLL_NOT_FOUND`）失败。本文完整记录定位与修复过程，含可直接复用的 PowerShell 脚本。
 
+## 缘起
+
+在通过 DeepSeek Harness 改版网站（Web GUI）使用智能体时，发现无头 shell 完全不可用：`pwsh` 与 `python` 都无法启动，任何命令都无法执行。于是展开本次排查与修复，并沉淀出这个开源项目，记录完整的定位思路、根因与可复用的修复脚本。
+
 ## 问题现象
 
 DSH 桌面应用（`D:\Program Files\dsh`）的无头 shell 不可用：
